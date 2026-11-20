@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 · DearKey 梦键</title>
+<meta name="description" content="DearKey 梦键的隐私政策：本机存储、AI 对话请求、完全访问说明与数据处理方式。">
+<meta name="theme-color" content="#f7f3ee">
+<link rel="canonical" href="https://dearkey.cn/privacy.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="nav"><div class="wrap nav-in">
+  <a class="brand" href="index.html"><img src="assets/appicon.webp" alt="DearKey 梦键图标" width="30" height="30"><span>DearKey<em>梦键</em></span></a>
+  <nav class="links" aria-label="主导航"><a href="index.html#product">产品</a><a href="index.html#screens">界面</a><a href="credits.html">开源署名</a><a href="index.html">返回官网</a></nav>
+  <div class="nav-right"><a class="btn btn-ink btn-sm" href="index.html">回到首页</a></div>
+</div></header>
+
+<main>
+<section class="doc-hero"><div class="container">
+  <span class="eyebrow">法律信息</span>
+  <h1>隐私政策</h1>
+  <p>梦键是一款本机优先的 iOS 输入法。这里说明它会存什么、什么时候联网、以及哪些数据只留在你的设备上。</p>
+  <div class="doc-meta">最近更新：2026 年 11 月 16 日 · 适用于 iOS / iPadOS 版 DearKey 梦键</div>
+</div></section>
+
+<section class="doc"><div class="container doc-body">
+  <article class="card doc-card">
+    <h2><span>01</span> 存在设备上的内容</h2>
+    <p>主 App 与键盘扩展通过 App Group <code>group.com.dreamkey.ios</code> 共享配置。以下内容保存在你的设备上：</p>
+    <ul>
+      <li>你写的人设提示词、亲密度档位、聊天上下文（键盘 AI 面板最近 12 条）与聊天记录</li>
+      <li>键盘皮肤、输入方案（26 键 / 9 键 / 小鹤双拼）、角色与打字猫设置、键盘启用状态心跳</li>
+      <li>梦币与免费额度的本地缓存、账号鉴权令牌（App 与键盘共用一份）</li>
+      <li>你自己导入的 <code>.bda</code> 皮肤包与 zip 角色包</li>
+    </ul>
+    <p>账号、免费额度、充值交易和消费账本保存在梦键服务端（Supabase）；绑定手机号后可登录同一账号找回余额。本机余额是缓存。令牌在设备钥匙串中备份，卸载并不等于注销账号；如需删除账号及关联云端数据，请使用 App 内「我的 → 隐私与数据 → 注销账号」。</p>
+    <p>聊天记录默认保存在本机。「云端聊天保存」默认关闭；你明确开启后，新产生的聊天文本才会保存到 Supabase 数据库，用于历史恢复。不会批量上传已有本地记录、图片、词库和离线素材。关闭后停止保存新聊天，已有云端记录可随注销账号删除。</p>
+  </article>
+
+  <article class="card doc-card">
+    <h2><span>02</span> 什么时候会联网</h2>
+    <p>基础输入（字母、拼音、标点、候选词）完全在本机完成，不需要网络。</p>
+    <p>使用聊天、回复、记忆整理或语音 AI 前，App 会说明数据接收方并请求明确授权。经同意后，对话、相关上下文、人设、记忆及你主动发送的图片或待朗读文字，经梦键服务端（Supabase）转发给阿里云百炼，用于完成请求。普通键盘输入不会自动上传。AI 处理与云端保存聊天是两项独立选择。</p>
+    <p>动作生成需单独授权：所选角色图片与动作描述经梦键服务端发送给 AiHubMix（aihubmix.com）及字节跳动 Seedance 模型服务，用于生成短片；AiHubMix 涉及向美国传输和处理数据。为中断恢复，服务端保存任务状态、动作名称、描述及生成结果；结果成功保存到本机后请求清理云端视频，注销账号时删除关联数据。聊天、语音和动作生成的供应商密钥均保存在服务端。</p>
+    <p>首次启动会由服务端完成一次匿名鉴权，不需要你注册或填写个人信息。</p>
+  </article>
+
+  <article class="card doc-card">
+    <h2><span>03</span> 「允许完全访问」</h2>
+    <p>iOS 对第三方键盘扩展默认限制网络与剪贴板。要读取复制的对话、发出 AI 请求，需要在 <strong>设置 → 通用 → 键盘 → 键盘 → 梦键</strong> 中打开「允许完全访问」。</p>
+    <p>键盘扩展本身不能跳转到系统设置，主 App 提供直达入口；启用状态通过键盘每次唤起时写入的心跳判断，不会在后台常驻读取。不打开完全访问，键盘仍可正常打字，只是 AI 对话不可用。</p>
+    <p>系统「完全访问」不代表你同意向第三方 AI 发送数据。AI 授权需另行确认，可在「我的 → 隐私与数据」撤回；拒绝或撤回不影响基础输入。</p>
+  </article>
+
+  <article class="card doc-card">
+    <h2><span>04</span> 导入内容与第三方素材</h2>
+    <p>你导入的皮肤包、角色包和离线素材默认保存在本机 App Group 中；仅在你选择使用相关 AI 功能并授权时，所选参考图才会发往生成服务。素材著作权归各自作者。内置第三方组件与语料许可见 <a href="credits.html">开源署名</a>。</p>
+    <p>Supabase 还用于账号和账本；模型服务用于生成内容。关闭 AI 授权不会删除已有云端记录。注销会删除账号及关联云端数据，未用梦币将无法继续使用，注销不会自动发起 Apple 退款。</p>
+  </article>
+
+  <article class="card doc-card">
+    <h2><span>05</span> 儿童与变更</h2>
+    <p>本产品不面向未满 14 周岁的儿童，也不会有意收集其个人信息。若你是监护人并认为孩子提供了信息，请通过下方方式联系我们删除。</p>
+    <p>本政策会随产品功能调整而更新，更新后的版本会发布在本页并修改「最近更新」日期。当前描述对应开发与内测版本的行为。</p>
+  </article>
+
+  <article class="card doc-card">
+    <h2><span>06</span> 联系我们</h2>
+    <p>对隐私或数据有任何疑问，可在 App 内「我的」页面提交反馈，或通过本站 <a href="index.html">dearkey.cn</a> 提供的入口与我们联系。</p>
+  </article>
+
+  <div class="doc-note">本页面是对产品当前行为的事实说明，不构成法律意见，也不替代正式发布时的 App Store 隐私标签与最终版隐私政策。</div>
+</div></section>
+</main>
+
+<footer class="footer"><div class="wrap footer-bottom">
+  <span>© 2026 DearKey 梦键 · 保留所有权利</span>
+  <span><a href="index.html">官网首页</a> · <a href="credits.html">开源署名</a> · <a href="privacy.html">隐私政策</a></span>
+</div></footer>
+</body>
+</html>

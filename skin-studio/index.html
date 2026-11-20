@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f8f6fb" />
+    <title>键帽手作室 · DearKey 梦键</title>
+    <link rel="stylesheet" href="studio.css" />
+    <script defer src="drawing.js"></script>
+    <script defer src="package.js"></script>
+    <script defer src="studio.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="logo" aria-hidden="true">⌘</span><strong>DearKey</strong
+        ><i></i><span>键帽手作室</span>
+      </div>
+      <div class="header-actions">
+        <small id="saved" role="status"></small
+        ><button id="export" class="primary">↓　导出皮肤</button>
+      </div>
+    </header>
+    <main>
+      <div class="page-title">
+        <div><h1>键盘皮肤工作台</h1></div>
+        <div class="history">
+          <button id="undo" title="撤销" aria-label="撤销">↶</button
+          ><button id="redo" title="重做" aria-label="重做">↷</button>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside class="library panel">
+          <h2>模板库</h2>
+          <p class="muted">选一套配色开始创作</p>
+          <div id="templates"></div>
+          <hr />
+          <div class="row">
+            <h2>我的素材</h2>
+            <span class="count" id="asset-count">0</span>
+          </div>
+          <label class="upload"
+            >＋　添加图片<input
+              id="files"
+              type="file"
+              multiple
+              accept="image/*" /></label
+          ><small class="hint">可多选，用作背景或键帽贴纸</small>
+          <div id="assets"></div>
+          <button id="batch" class="outline" hidden>
+            按素材顺序铺到字母键
+          </button>
+        </aside>
+        <section class="center panel">
+          <div class="canvas-head">
+            <div>
+              <small class="muted">键盘预览</small>
+              <h2 id="design-title"></h2>
+            </div>
+            <div class="segments" aria-label="预览模式">
+              <button id="edit" aria-pressed="true">编辑</button
+              ><button id="try" aria-pressed="false">试打</button>
+            </div>
+          </div>
+          <div class="stage">
+            <span class="stage-label">拼音 · 26 键</span>
+            <div id="keyboard">
+              <canvas
+                id="preview"
+                width="960"
+                height="552"
+                aria-label="键盘外观"
+              ></canvas>
+              <div id="keys"></div>
+              <canvas
+                id="float-preview"
+                width="192"
+                height="192"
+                hidden
+                aria-hidden="true"
+              ></canvas>
+            </div>
+            <span class="stage-caption" id="stage-caption"></span>
+          </div>
+          <div class="trybar" id="trybar" hidden>
+            <label for="typed">试打</label
+            ><textarea
+              id="typed"
+              rows="1"
+              placeholder="点击键帽，或在这里输入"
+            ></textarea
+            ><button id="clear">清空</button>
+          </div>
+          <div class="canvas-foot">
+            <div class="palette" id="palette"></div>
+            <button id="png" class="quiet">↓　保存效果图</button>
+          </div>
+        </section>
+        <aside class="inspector panel">
+          <h2>皮肤设置</h2>
+          <label class="field"
+            >作品名称<input id="name" maxlength="32"
+          /></label>
+          <div class="tabs" role="group" aria-label="设置分类">
+            <button data-tab="look" aria-pressed="true">外观</button
+            ><button data-tab="art">贴纸</button
+            ><button data-tab="feedback">反馈</button>
+          </div>
+          <div id="look">
+            <div class="subhead">键盘配色</div>
+            <div id="colors"></div>
+            <hr />
+            <label class="field"
+              >键帽圆角 <output id="radius-value" for="radius"></output
+              ><input id="radius" type="range" min="2" max="22"
+            /></label>
+            <label class="field"
+              >字体<select id="font">
+                <option value="rounded">圆体</option>
+                <option value="serif">衬线体</option>
+                <option value="mono">等宽体</option>
+              </select></label
+            >
+          </div>
+          <div id="art" hidden>
+            <label class="field">贴纸位置<select id="target"></select></label>
+            <div class="subhead">图案</div>
+            <div id="motifs"></div>
+            <button id="remove-face" class="quiet">恢复键帽底色</button
+            ><button id="remove-art" class="quiet">移除此处贴纸</button>
+            <hr />
+            <label class="field"
+              >漂浮贴纸<select id="floating">
+                <option value="">关闭</option>
+                <option>✦</option>
+                <option>♡</option>
+                <option>☾</option>
+                <option>✿</option>
+              </select></label
+            >
+            <div id="float-settings" hidden>
+              <label class="field"
+                >水平位置<input
+                  id="floatX"
+                  type="range"
+                  min="5"
+                  max="95" /></label
+              ><label class="field"
+                >垂直位置<input
+                  id="floatY"
+                  type="range"
+                  min="8"
+                  max="92" /></label
+              ><label class="field"
+                >贴纸大小<input id="floatSize" type="range" min="4" max="19"
+              /></label>
+            </div>
+            <hr />
+            <div class="subhead">背景图片</div>
+            <button id="choose-bg" class="outline">从设备选择图片</button
+            ><button id="reset-bg" class="quiet">恢复模板背景</button
+            ><small class="hint">点素材缩略图，可将它用作背景或贴纸。</small>
+          </div>
+          <div id="feedback" hidden>
+            <label class="field"
+              >按键动效<select id="effect">
+                <option value="none">关闭</option>
+                <option value="bounce">轻弹</option>
+                <option value="star">星光上浮</option>
+              </select></label
+            ><label class="field"
+              >按键音效<select id="sound">
+                <option value="none">静音</option>
+                <option value="click">轻敲</option>
+                <option value="pop">气泡</option>
+              </select></label
+            ><button id="audition" class="outline">▷　试按一下</button>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <dialog id="export-dialog">
+      <form method="dialog">
+        <div class="row">
+          <h2>导出皮肤</h2>
+          <button aria-label="关闭">×</button>
+        </div>
+      </form>
+      <p>
+        将皮肤包存到「文件」，在梦键的「键盘皮肤 →
+        导入百度皮肤」中选取，即可换上。
+      </p>
+      <button id="download" class="primary">↓　下载梦键皮肤包 (.bda)</button>
+    </dialog>
+    <dialog id="asset-dialog">
+      <form method="dialog">
+        <div class="row">
+          <h2>使用素材</h2>
+          <button aria-label="关闭">×</button>
+        </div>
+      </form>
+      <img id="asset-preview" alt="所选素材" /><button
+        id="use-bg"
+        class="outline"
+      >
+        设为键盘背景</button
+      ><button id="use-face" class="outline">设为所选键帽底图</button
+      ><button id="use-float" class="outline">设为漂浮贴纸</button
+      ><button id="use-art" class="outline">贴到所选键帽</button>
+    </dialog>
+    <input type="file" id="bg-file" accept="image/*" hidden />
+    <div id="notice" role="status"></div>
+  </body>
+</html>

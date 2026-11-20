@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源署名 · DearKey 梦键</title>
+<meta name="description" content="DearKey 梦键使用的第三方组件、语料与素材的署名、许可与修改说明。">
+<meta name="theme-color" content="#f7f3ee">
+<link rel="canonical" href="https://dearkey.cn/credits.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="nav"><div class="wrap nav-in">
+  <a class="brand" href="index.html"><img src="assets/appicon.webp" alt="DearKey 梦键图标" width="30" height="30"><span>DearKey<em>梦键</em></span></a>
+  <nav class="links" aria-label="主导航"><a href="index.html#product">产品</a><a href="index.html#screens">界面</a><a href="privacy.html">隐私政策</a><a href="index.html">返回官网</a></nav>
+  <div class="nav-right"><a class="btn btn-ink btn-sm" href="index.html">回到首页</a></div>
+</div></header>
+
+<main>
+<section class="doc-hero"><div class="container">
+  <span class="eyebrow">合规与致谢</span>
+  <h1>开源署名与第三方声明</h1>
+  <p>梦键站在很多开源项目与公开语料的肩膀上。这里列出用到的组件、许可、修改说明与许可链接；同一份内容也展示在 App 内「我的 → 版权与许可」。</p>
+  <div class="doc-meta">最近更新：2026 年 11 月 11 日 · 不随包附许可证全文，均以官方链接为准</div>
+</div></section>
+
+<section class="doc"><div class="container doc-body">
+
+  <article class="card doc-card">
+    <h2>开源组件与语料</h2>
+    <span class="lic">CC BY 4.0 / MIT / CC BY-SA 4.0</span>
+    <div class="table-wrap"><table>
+      <thead><tr><th>组件 / 语料</th><th>许可</th><th>用途</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://github.com/amzxyz/rime-wanxiang-data" target="_blank" rel="noopener">万象词库 rime-wanxiang-data</a><br><small>commit 533962986f</small></td><td>CC BY 4.0</td><td>拼音词表主干：官方核心组合中的 jichu / duoyin / cuoyin / diming / yiren / mingren 六张</td></tr>
+        <tr><td><a href="https://github.com/fxsjy/jieba" target="_blank" rel="noopener">jieba</a></td><td>MIT</td><td>单字候选音节表、词频量纲校准基准、保底键交叉验证</td></tr>
+        <tr><td><a href="https://github.com/thunlp/THUOCL" target="_blank" rel="noopener">THUOCL</a></td><td>MIT</td><td>七类专名交叉验证词集</td></tr>
+        <tr><td><a href="https://github.com/mozillazg/python-pinyin" target="_blank" rel="noopener">pypinyin</a> / <a href="https://github.com/mozillazg/pinyin-data" target="_blank" rel="noopener">pinyin-data</a> / <a href="https://github.com/mozillazg/phrase-pinyin-data" target="_blank" rel="noopener">phrase-pinyin-data</a></td><td>MIT</td><td>单字与词组拼音、多音验证</td></tr>
+        <tr><td><a href="https://github.com/MMmmmoko/Bongo-Cat-Mver" target="_blank" rel="noopener">Bongo-Cat-Mver</a><br><small>Copyright (c) 2020 Han Zhang</small></td><td>MIT</td><td>键盘装饰「打字猫」的 PNG 帧素材</td></tr>
+        <tr><td>中文维基百科</td><td>CC BY-SA 4.0</td><td>统计二元语言模型的词共现频次（约 12 万组），只保留聚合计数，不含原文片段</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-top:16px">版权行：jieba Copyright (c) 2013 Sun Junyi · THUOCL Copyright (c) 2018 THUNLP · pypinyin / pinyin-data Copyright (c) 2016 mozillazg · phrase-pinyin-data Copyright (c) 2017 mozillazg · Bongo-Cat-Mver Copyright (c) 2020 Han Zhang。万象词库按 amzxyz / rime-wanxiang-data contributors 署名。</p>
+  </article>
+
+  <article class="card doc-card">
+    <h2>万象词库 · 修改说明</h2>
+    <span class="lic">CC BY 4.0 · 署名 + 许可链接 + 注明修改 + 无担保</span>
+    <p>本项目只使用上游自行维护的词库与拼音数据，未使用其任何程序代码。固定版本 <code>533962986f5fbbcb03f61be314f3d7268fa983b8</code>，保证词表可复现。主要修改：</p>
+    <ul>
+      <li>带调拼音脱调，六张表按同源权重合并，只保留能被音节表完整切开的 2~4 字词</li>
+      <li>权重按 jieba 词频量纲线性校准，剔除低权重语法碎片</li>
+      <li>取前 12 万词键，另用 jieba / THUOCL 交叉验证补 2 万保底键，生成 14 万键 / 23.6 万词条的派生词表</li>
+      <li>随应用分发的只有这份派生词表与署名说明，不含原始 yaml、Rime 配置或上游代码</li>
+    </ul>
+    <p>许可链接：<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0 摘要</a> · <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank" rel="noopener">法律全文</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="https://opensource.org/license/mit" target="_blank" rel="noopener">MIT</a>。原始材料按「现状」提供，不附带任何明示或默示担保。</p>
+    <p>THUOCL 附加要求：若以本项目发表论文或科研成果，需声明并引用「韩世依, 张钰晖, 马云山, 涂存超, 郭志芃, 刘知远, 孙茂松. THUOCL：清华大学开放中文词库. 2016.」。</p>
+  </article>
+
+  <article class="card doc-card">
+    <h2>打字猫素材 · 修改说明</h2>
+    <span class="lic">MIT · Bongo-Cat-Mver</span>
+    <p>白猫使用上游原图；橘猫由同一份素材换色派生。为适配键盘皮肤与实现眨眼、视线跟随，对素材做了三处修改：</p>
+    <ul>
+      <li>把底图桌面白底抠成透明，避免在任何皮肤上出现白方块</li>
+      <li>擦除原本画死在底图上的两颗眼睛，改由代码按原位置原大小重绘</li>
+      <li>将头部切为独立图层，实现头、身子、爪子分层跟随手指转动</li>
+    </ul>
+    <p>上游的 Live2D 模型、C++ 源码与 Cubism SDK 均未取用。用户自行导入的按键猫 / Live2D 角色包著作权归各皮肤作者，只存在用户设备上，不随 App 分发。</p>
+  </article>
+
+  <article class="card doc-card">
+    <h2>Live2D Cubism SDK</h2>
+    <span class="lic">专有许可 / Live2D Open Software License Agreement</span>
+    <p>角色预览与键盘上的原生 Live2D 渲染使用 Live2D 官方 Cubism SDK 5-r.5：</p>
+    <ul>
+      <li><strong>Live2D Cubism Core</strong>：闭源静态库，按 Live2D Proprietary Software License Agreement 随 App 与键盘扩展分发</li>
+      <li><strong>Live2D Cubism Native Framework</strong>：C++ 源码（含 Metal 后端），按 Live2D Open Software License Agreement 使用</li>
+    </ul>
+    <p>版权行：<code>Live2D Cubism SDK  Copyright (c) Live2D Inc.</code>。允许用户导入任意模型的产品属于「可扩展性应用程序」，发布前需向 Live2D 单独申请 Publication License。</p>
+  </article>
+
+  <article class="card doc-card">
+    <h2>第三方服务</h2>
+    <p>AI 对话与语音经自建 Supabase Edge Function 转发到模型服务；这些是在线服务而非随包代码依赖，各自受其服务条款约束。模型供应商的 Key 只保存在服务端，不进入客户端安装包。详见 <a href="privacy.html">隐私政策</a>。</p>
+  </article>
+
+  <div class="doc-note">本页仅做事实披露，不构成法律意见。引入新的词库、语料或第三方美术资源时，会同步更新本页、App 内「版权与许可」页与仓库中的 THIRD_PARTY_NOTICES.md。按项目约定，仓库、App 与本站均不附许可证全文，只提供许可标识与官方链接。</div>
+</div></section>
+</main>
+
+<footer class="footer"><div class="wrap footer-bottom">
+  <span>© 2026 DearKey 梦键 · 保留所有权利</span>
+  <span><a href="index.html">官网首页</a> · <a href="credits.html">开源署名</a> · <a href="privacy.html">隐私政策</a></span>
+</div></footer>
+</body>
+</html>
