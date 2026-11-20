@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>DearKey 梦键 · iOS 输入法</title>
-  <meta name="description" content="梦键是 iPhone 和 iPad 上的输入法，支持全拼、小鹤双拼和拼音九键，也可以在键盘里拟回复、换皮肤和选角色。">
+  <title>DearKey 梦键 · iPhone 和 iPad 输入法</title>
+  <meta name="description" content="梦键是 iPhone 和 iPad 上的输入法，支持全拼、小鹤双拼、拼音九键和键盘内拟回复。">
   <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://dearkey.cn/">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/favicon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DearKey 梦键">
-  <meta property="og:title" content="DearKey 梦键 · iOS 输入法">
-  <meta property="og:description" content="全拼、双拼和九键。在同一把键盘上打字，也能拟回复。">
+  <meta property="og:title" content="DearKey 梦键 · iPhone 和 iPad 输入法">
+  <meta property="og:description" content="全拼、小鹤双拼和拼音九键。需要时，可以在键盘里拟回复。">
   <meta property="og:url" content="https://dearkey.cn/">
   <meta property="og:image" content="https://dearkey.cn/assets/keyboard-native-light.webp">
   <meta property="og:image:alt" content="梦键的原生灰白皮肤与全拼 26 键">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/styles.css?v=3">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DearKey 梦键","applicationCategory":"UtilitiesApplication","operatingSystem":"iOS 16+ / iPadOS","description":"支持全拼、小鹤双拼、拼音九键和键盘内 AI 回复的输入法。","url":"https://dearkey.cn/","image":"https://dearkey.cn/assets/appicon.webp"}
   </script>
@@ -27,112 +27,87 @@
   <header class="nav" id="top">
     <div class="wrap nav-in">
       <a class="brand" href="#top" aria-label="DearKey 梦键首页">
-        <img src="assets/appicon.webp" alt="" width="34" height="34">
+        <img src="assets/appicon.webp" alt="" width="28" height="28">
         <span>DearKey <em>梦键</em></span>
       </a>
       <nav class="links" aria-label="主导航">
-        <a class="nav-product" href="#product">输入体验</a>
+        <a class="nav-product" href="#product">键盘功能</a>
         <a href="skin-studio/index.html">皮肤制作</a>
+        <a href="#get">内测说明</a>
       </nav>
-      <div class="nav-right">
-        <a class="btn btn-ink btn-sm" href="#get">内测说明</a>
-      </div>
     </div>
   </header>
 
-  <main id="main">
-    <div class="wrap">
-      <section class="hero" aria-labelledby="hero-title">
-        <p class="eyebrow">iPhone 和 iPad 输入法</p>
-        <div class="hero-intro">
-          <h1 id="hero-title"><span>打字和回话，</span><span>都在键盘里。</span></h1>
-          <p>用熟悉的方式打字。需要拟一句回复时，在键盘里选一句，改好再发。</p>
-        </div>
-      </section>
-
-      <section class="showcase" id="screens" aria-labelledby="showcase-title">
-        <fieldset class="showcase-controls">
-          <legend id="showcase-title">原生键盘预览</legend>
-          <div class="showcase-options">
-            <div class="showcase-option">
-              <input type="radio" name="keyboard-preview" id="keyboard-light" checked>
-              <label for="keyboard-light">全拼 26 键</label>
-            </div>
-            <div class="showcase-option">
-              <input type="radio" name="keyboard-preview" id="keyboard-nine">
-              <label for="keyboard-nine">拼音九键</label>
-            </div>
-            <div class="showcase-option">
-              <input type="radio" name="keyboard-preview" id="keyboard-dark">
-              <label for="keyboard-dark">原生深色</label>
-            </div>
-          </div>
-        </fieldset>
-        <div class="showcase-stage">
-          <figure class="shot shot-light">
-            <img src="assets/keyboard-native-light.webp" width="1206" height="976" alt="梦键原生浅色 26 键，白色字母键、浅灰色功能键和键盘上方的猫耳角色" fetchpriority="high">
-          </figure>
-          <figure class="shot shot-nine">
-            <img src="assets/keyboard-native-nine.webp" width="1206" height="976" alt="原生浅色拼音九键布局，含符号、数字、空格与换行键" fetchpriority="low">
-          </figure>
-          <figure class="shot shot-dark">
-            <img src="assets/keyboard-native-dark.webp" width="1206" height="976" alt="原生深色 26 键布局，深灰键帽与白色字母" fetchpriority="low">
-          </figure>
-        </div>
-      </section>
-
-      <section class="features section" id="product" aria-labelledby="product-title">
-        <h2 id="product-title">怎么顺手，怎么打。</h2>
-        <dl class="feature-list">
-          <div>
-            <dt>全拼、双拼和九键</dt>
-            <dd>支持全拼 26 键、小鹤双拼和拼音九键。常用的符号和剪贴板也能直接从键盘打开。</dd>
-          </div>
-          <div>
-            <dt>在键盘里拟回复</dt>
-            <dd>复制收到的消息，打开键盘上的 AI 回复。选中的回复会填进输入框，你可以改完再发送。</dd>
-          </div>
-          <div>
-            <dt>外观跟随系统</dt>
-            <dd>首装使用原生灰白皮肤。开启跟随系统后，键盘会在原生浅色与深色之间切换。</dd>
-          </div>
-        </dl>
-      </section>
-    </div>
-
-    <section class="customize" id="characters" aria-labelledby="customize-title">
-      <div class="wrap customize-inner">
-        <h2 id="customize-title">把键盘布置成你喜欢的样子。</h2>
-        <div class="customize-list">
-          <div>
-            <h3>自己做皮肤</h3>
-            <p>在浏览器里给键帽配色，预览不同布局，再导出皮肤包到梦键。</p>
-            <a class="inline-link" href="skin-studio/index.html">打开皮肤制作</a>
-          </div>
-          <div>
-            <h3>选一个键盘角色</h3>
-            <p>在 App 的「梦角」里切换角色，让它出现在键盘上。想专心打字时，也可以把角色收起来。</p>
-          </div>
-        </div>
+  <main class="wrap" id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-intro">
+        <h1 id="hero-title">梦键</h1>
+        <p class="hero-platform">iPhone 和 iPad 输入法</p>
+        <p class="hero-description">用习惯的方式打字。聊天时想不出怎么回，可以直接在键盘里拟一句。</p>
+        <a class="btn btn-ink" href="#get">了解内测</a>
       </div>
+
+      <section class="keyboard-preview" id="screens" aria-labelledby="preview-title">
+        <div class="keyboard-stage">
+          <figure class="keyboard-shot keyboard-light">
+            <img src="assets/keyboard-native-light.webp" width="1206" height="976" alt="梦键原生浅色皮肤的 26 键键盘，白色键帽和浅灰色功能键，猫耳角色站在工具栏旁" fetchpriority="high">
+          </figure>
+          <figure class="keyboard-shot keyboard-nine">
+            <img src="assets/keyboard-native-nine.webp" width="1206" height="976" alt="梦键原生浅色皮肤的拼音九键键盘" fetchpriority="low">
+          </figure>
+          <figure class="keyboard-shot keyboard-dark">
+            <img src="assets/keyboard-native-dark.webp" width="1206" height="976" alt="梦键原生深色皮肤的 26 键键盘" fetchpriority="low">
+          </figure>
+        </div>
+        <div class="preview-caption">
+          <p id="preview-title">原生皮肤</p>
+          <fieldset class="preview-controls">
+            <legend class="visually-hidden">切换键盘预览</legend>
+            <div class="preview-option">
+              <input type="radio" name="keyboard-preview" id="preview-light" checked>
+              <label for="preview-light">26 键</label>
+            </div>
+            <div class="preview-option">
+              <input type="radio" name="keyboard-preview" id="preview-nine">
+              <label for="preview-nine">九键</label>
+            </div>
+            <div class="preview-option">
+              <input type="radio" name="keyboard-preview" id="preview-dark">
+              <label for="preview-dark">深色</label>
+            </div>
+          </fieldset>
+        </div>
+      </section>
     </section>
 
-    <section class="wrap beta section" id="get" aria-labelledby="beta-title">
-      <div>
-        <h2 id="beta-title">获取梦键</h2>
-        <p>适用于 iOS 16 及以上的 iPhone，以及 iPad。</p>
-      </div>
-      <div class="beta-info">
-        <h3>目前处于内测阶段</h3>
-        <p>已有邀请的用户可在 TestFlight 安装。正式版开放下载后，官网会更新获取入口。</p>
-      </div>
+    <section class="features" id="product" aria-labelledby="product-title">
+      <h2 id="product-title">键盘功能</h2>
+      <dl class="feature-list">
+        <div>
+          <dt>输入与工具</dt>
+          <dd>切换全拼 26 键、小鹤双拼或拼音九键。符号和剪贴板也能直接从键盘打开。</dd>
+        </div>
+        <div>
+          <dt>拟回复</dt>
+          <dd>复制收到的消息，打开 AI 回复。选中的句子会填进输入框，可以编辑后再发。</dd>
+        </div>
+        <div id="characters">
+          <dt>皮肤与角色</dt>
+          <dd>原生皮肤可以跟随系统切换浅色和深色。在 App 的「梦角」里可以更换键盘角色。<a href="skin-studio/index.html">制作自己的皮肤</a></dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="access" id="get" aria-labelledby="access-title">
+      <h2 id="access-title">内测说明</h2>
+      <p>梦键目前通过 TestFlight 内测。已有邀请的用户可以在 TestFlight 安装。正式版发布后，下载入口会更新在这里。</p>
+      <p class="system-requirements">支持 iOS 和 iPadOS 16 及以上版本。</p>
     </section>
   </main>
 
   <footer class="footer">
     <div class="wrap footer-bottom">
       <a class="brand" href="#top" aria-label="回到 DearKey 梦键首页">
-        <img src="assets/appicon.webp" alt="" width="34" height="34">
         <span>DearKey <em>梦键</em></span>
       </a>
       <nav class="footer-links" aria-label="页脚链接">
